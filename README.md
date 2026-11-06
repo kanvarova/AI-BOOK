@@ -46,7 +46,7 @@ node --check src/labs.js
 node scripts/build.mjs
 ```
 
-The build copies the website into **dist/** for static hosting, including GitHub Pages. Automatic publication is not configured. The book works locally without internet; external bibliography links need a connection.
+The build copies the website into **dist/** for static hosting, including GitHub Pages. GitHub Pages publishes the root of the `feature/english-airi-book` branch. Updates to this branch trigger publication. The book works locally without internet; external bibliography links need a connection.
 
 Independent verification and limitations are in **QA_REPORT.md**. Checks not performed must be marked NOT VERIFIED.
 
@@ -83,15 +83,12 @@ StPageFlip 2.0.7 by Oleg Nodlik is included under MIT; see src/vendor/page-flip.
 
 Character art uses built-in image generation; diagrams are original SVG. See IMAGE_PROMPTS.md for final paths and prompts.
 
-## GitHub handoff
+## GitHub and public website
 
-Work is on **feature/english-airi-book** in the original AI-BOOK checkout. The earlier edition remains in Git history. Push requires authenticated write access.
+- Public book: https://kanvarova.github.io/AI-BOOK/
+- Complete source: https://github.com/kanvarova/AI-BOOK/tree/feature/english-airi-book
+- Review: https://github.com/kanvarova/AI-BOOK/pull/1
 
-After signing in through Git Credential Manager or GitHub CLI:
+GitHub Pages uses **Deploy from a branch**, branch **feature/english-airi-book**, directory **/ (root)**. Update this branch to update the live book. Allow GitHub Pages to finish deployment after a commit.
 
-```sh
-git push -u origin main
-git push -u origin feature/english-airi-book
-```
-
-Open a pull request into main. Do not merge before review.
+The pull request into main remains open for review. No automatic merge is configured. All 29 original project files were compared with the downloaded GitHub archive; their contents match after normalizing line endings and the final newline. GitHub Actions also passed the repository check workflow after the full upload.
