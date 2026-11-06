@@ -1,0 +1,19 @@
+{
+  "name": "campus-ai-book",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "English AI Fundamentals field guide with eight chapters and physical page turning",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node tests/algorithms.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "vendoredDependencies": {
+    "page-flip": "2.0.7 (MIT; src/vendor/page-flip.js)"
+  }
+}
